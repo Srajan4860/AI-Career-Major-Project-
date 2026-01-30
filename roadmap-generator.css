@@ -1,0 +1,66 @@
+/* Roadmap Generator Styles */
+
+.roadmap-generator-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+#roadmap-info-form .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#roadmap-info-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+#roadmap-info-form .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+#roadmap-info-form label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+#roadmap-info-form input,
+#roadmap-info-form select,
+#roadmap-info-form textarea {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+#roadmap-info-form input:focus,
+#roadmap-info-form select:focus,
+#roadmap-info-form textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: white;
+}
+
+#roadmap-info-form textarea {
+    resize: vertical;
+}
+
+.generate-btn {
+    width: auto;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* Generated Roadmap Styles */
+#generated-roadmap-container {
+    margin-top: 2rem;
+}

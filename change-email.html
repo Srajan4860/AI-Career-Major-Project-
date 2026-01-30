@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Your Email Address</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+        .auth-container { display: flex; justify-content: center; align-items: center; width: 100%; }
+        .auth-right { background: none; backdrop-filter: none; }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+
+        <div class="auth-right" style="margin: auto; max-width: 500px; position: relative; z-index: 1;">
+            <div class="auth-card">
+                <div class="welcome-text">
+                    <h2>Change Email Address</h2>
+                    <p>Enter your new email below. Confirmation links will be sent to both your old and new addresses.</p>
+                </div>
+                <form id="change-email-form">
+                    <div class="form-group">
+                        <label for="new-email">New Email Address</label>
+                        <input type="email" id="new-email" required>
+                        <i class="fas fa-envelope input-icon"></i>
+                    </div>
+                    <button type="submit" class="submit-btn">Request Email Change</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script to handle the email update -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module">
+        import supabase from './supabase-client.js';
+
+        // Check if user is logged in, otherwise redirect
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            if (!session) {
+                window.location.href = 'login.html';
+            }
+        });
+
+        const form = document.getElementById('change-email-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const newEmail = document.getElementById('new-email').value;
+            const submitBtn = e.target.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            const { error } = await supabase.auth.updateUser({ email: newEmail });
+
+            if (error) {
+                alert("Error: " + error.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Request Email Change';
+            } else {
+                alert("Confirmation emails sent! Please check both inboxes to complete the change.");
+                // Redirect back to the dashboard profile page
+                window.location.href = 'dashboard.html#profile';
+            }
+        });
+    </script>
+</body>
+</html>

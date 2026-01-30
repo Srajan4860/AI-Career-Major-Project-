@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Planner - Shape Your Future</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" href="landing.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>AI Career Planner</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-elements">
+                <div class="floating-icon" style="--delay: 0s; --x: 10%; --y: 20%;">🚀</div>
+                <div class="floating-icon" style="--delay: 2s; --x: 80%; --y: 30%;">💡</div>
+                <div class="floating-icon" style="--delay: 4s; --x: 15%; --y: 70%;">⚡</div>
+                <div class="floating-icon" style="--delay: 6s; --x: 85%; --y: 60%;">🎯</div>
+                <div class="floating-icon" style="--delay: 8s; --x: 50%; --y: 80%;">📊</div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Shape Your <span class="gradient-text">AI Career</span> Journey
+                </h1>
+                <p class="hero-subtitle">
+                    Personalized roadmaps, curated resources, and expert guidance to accelerate your career in AI,
+                    Technology, Healthcare, Finance, and more.
+                </p>
+                <div class="hero-buttons">
+                    <a href="login.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Get Started Free
+                    </a>
+                    <button class="btn btn-secondary" onclick="uploadResume()">
+                        <i class="fas fa-upload"></i>
+                        Upload Resume
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Users</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Courses</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Career Growth</span>
+                    </div>
+                    <div class="progress-demo">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                        <span>85% Complete</span>
+                    </div>
+                    <div class="skills-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Data Science</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose AI Career Planner?</h2>
+                <p class="section-subtitle">Powerful features to accelerate your career journey</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI-Powered Assessment</h3>
+                    <p>Advanced algorithms analyze your skills and recommend personalized career paths tailored to your
+                        strengths.</p>
+                    <div class="feature-number">01</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-route"></i></div>
+                    <h3>Custom Roadmaps</h3>
+                    <p>Step-by-step learning paths with milestones, deadlines, and progress tracking for optimal career
+                        growth.</p>
+                    <div class="feature-number">02</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Curated Learning</h3>
+                    <p>Hand-picked courses, tutorials, and resources from top platforms to ensure quality education.</p>
+                    <div class="feature-number">03</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Expert Mentorship</h3>
+                    <p>Connect with industry professionals and get guidance from experts in your chosen field.</p>
+                    <div class="feature-number">04</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Achievements</h3>
+                    <p>Earn certificates, badges, and build a professional portfolio to showcase your skills.</p>
+                    <div class="feature-number">05</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Career Acceleration</h3>
+                    <p>Fast-track your career with industry connections, job placement assistance, and interview prep.
+                    </p>
+                    <div class="feature-number">06</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" class="careers">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Career Paths</h2>
+                <p class="section-subtitle">Discover opportunities across multiple industries</p>
+            </div>
+            <div class="careers-tabs">
+                <button class="tab-btn active" onclick="showCareerCategory('technology', this)">Technology</button>
+                <button class="tab-btn" onclick="showCareerCategory('healthcare', this)">Healthcare</button>
+                <button class="tab-btn" onclick="showCareerCategory('finance', this)">Finance</button>
+                <button class="tab-btn" onclick="showCareerCategory('business', this)">Business</button>
+            </div>
+            <div class="careers-content">
+                <div id="technology" class="career-category active">
+                    <div class="careers-grid">
+                        <div class="career-card">
+                            <div class="career-icon">🤖</div>
+                            <h3>AI/ML Engineer</h3>
+                            <p>Build intelligent systems and machine learning models</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $120K-180K</span><span><i
+                                        class="fas fa-chart-line"></i> High Growth</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">📊</div>
+                            <h3>Data Scientist</h3>
+                            <p>Extract insights from complex data sets</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $110K-160K</span><span><i
+                                        class="fas fa-chart-line"></i> Very High</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">💻</div>
+                            <h3>Software Engineer</h3>
+                            <p>Develop applications and software solutions</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $90K-150K</span><span><i
+                                        class="fas fa-chart-line"></i> High</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">🔒</div>
+                            <h3>Cybersecurity</h3>
+                            <p>Protect systems from digital threats</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $100K-170K</span><span><i
+                                        class="fas fa-chart-line"></i> Critical</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="healthcare" class="career-category">
+                    <div class="careers-grid">
+                        <div class="career-card">
+                            <div class="career-icon">🏥</div>
+                            <h3>Healthcare Administrator</h3>
+                            <p>Manage healthcare facilities and operations</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $80K-130K</span><span><i
+                                        class="fas fa-chart-line"></i> Growing</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">💊</div>
+                            <h3>Medical Research</h3>
+                            <p>Conduct research to advance medical knowledge</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $85K-140K</span><span><i
+                                        class="fas fa-chart-line"></i> Stable</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">🧬</div>
+                            <h3>Biotechnology</h3>
+                            <p>Apply technology to biological systems</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $90K-150K</span><span><i
+                                        class="fas fa-chart-line"></i> High Growth</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">🔬</div>
+                            <h3>Clinical Research</h3>
+                            <p>Design and conduct clinical trials</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $75K-120K</span><span><i
+                                        class="fas fa-chart-line"></i> Growing</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="finance" class="career-category">
+                    <div class="careers-grid">
+                        <div class="career-card">
+                            <div class="career-icon">📈</div>
+                            <h3>Financial Analyst</h3>
+                            <p>Analyze financial data and market trends</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $70K-120K</span><span><i
+                                        class="fas fa-chart-line"></i> Stable</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">💰</div>
+                            <h3>Investment Banking</h3>
+                            <p>Provide financial services to corporations</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $150K-300K</span><span><i
+                                        class="fas fa-chart-line"></i> High Reward</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">🧮</div>
+                            <h3>Chartered Accountant</h3>
+                            <p>Provide accounting and financial expertise</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $60K-100K</span><span><i
+                                        class="fas fa-chart-line"></i> Stable</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">⚖️</div>
+                            <h3>Risk Management</h3>
+                            <p>Identify and mitigate financial risks</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $90K-140K</span><span><i
+                                        class="fas fa-chart-line"></i> Growing</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="business" class="career-category">
+                    <div class="careers-grid">
+                        <div class="career-card">
+                            <div class="career-icon">🏨</div>
+                            <h3>Hotel Management</h3>
+                            <p>Oversee hotel operations and guest services</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $50K-90K</span><span><i
+                                        class="fas fa-chart-line"></i> Recovering</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">📊</div>
+                            <h3>Business Analytics</h3>
+                            <p>Use data to drive business decisions</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $80K-130K</span><span><i
+                                        class="fas fa-chart-line"></i> High Growth</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">🚀</div>
+                            <h3>Product Management</h3>
+                            <p>Guide product development and strategy</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $100K-180K</span><span><i
+                                        class="fas fa-chart-line"></i> High Demand</span></div>
+                        </div>
+                        <div class="career-card">
+                            <div class="career-icon">📢</div>
+                            <h3>Digital Marketing</h3>
+                            <p>Drive online marketing and brand growth</p>
+                            <div class="career-stats"><span><i class="fas fa-dollar-sign"></i> $55K-95K</span><span><i
+                                        class="fas fa-chart-line"></i> Growing</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Have questions? We've got answers to help you get started.</p>
+            </div>
+            <div class="faq-accordion">
+                <details>
+                    <summary>What is AI Career Planner?</summary>
+                    <p>AI Career Planner is a platform that uses artificial intelligence to analyze your skills and
+                        career goals. It then generates a personalized, step-by-step learning roadmap with curated
+                        resources to help you succeed in your chosen field.</p>
+                </details>
+                <details>
+                    <summary>How is my career roadmap generated?</summary>
+                    <p>After you sign up and provide details about your current skills, experience level, and career
+                        aspirations, our AI model identifies skill gaps and recommends a path of specific courses,
+                        projects, and milestones to help you progress efficiently.</p>
+                </details>
+                <details>
+                    <summary>Is the basic plan free?</summary>
+                    <p>Yes! Creating an account and generating your initial AI-powered career roadmap is completely
+                        free. We offer optional premium features like one-on-one mentorship and advanced course
+                        integrations for users who wish to upgrade.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Join thousands of professionals who have transformed their careers with AI Career Planner</p>
+                <a href="login.html" class="btn btn-cta">
+                    <i class="fas fa-play"></i>
+                    Start Your Career Journey
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo"><i class="fas fa-brain"></i><span>AI Career Planner</span></div>
+                    <p>Empowering careers through AI-driven personalized learning and mentorship.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#">Career Assessment</a></li>
+                        <li><a href="#">Learning Paths</a></li>
+                        <li><a href="#">Mentorship</a></li>
+                        <li><a href="#">Certificates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Career Guides</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Career Planner. Created with ❤️ by Raj, Arya, Yash & Srajan</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="project-modal-overlay">
+        <div id="project-modal">
+            <h2>Add New Project</h2>
+
+            <form id="project-form">
+
+                <div class="form-group">
+                    <label for="project-title">Project Title</label>
+                    <input type="text" id="project-title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" name="description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-github">GitHub URL (Optional)</label>
+                    <input type="url" id="project-github" name="github_url">
+                </div>
+
+                <div class="form-group">
+                    <label for="project-demo">Live Demo URL (Optional)</label>
+                    <input type="url" id="project-demo" name="live_demo_url">
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" id="cancel-btn">Cancel</button>
+                    <button type="submit" id="save-btn">Save Project</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="landing.js"></script>
+
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "v5GaGbPXMqyBZmUn2gCz5"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
+</body>
+
+</html>

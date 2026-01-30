@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <title>Change Profile Picture</title>
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .auth-right {
+            background: none;
+            backdrop-filter: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+
+        <div class="auth-right" style="margin: auto; max-width: 500px; position: relative; z-index: 1;">
+            <div class="auth-card">
+                <div class="welcome-text">
+                    <h2>Update Profile Picture</h2>
+                    <p>Select a new photo to use as your avatar.</p>
+                </div>
+                <form id="change-photo-form">
+                    <div class="form-group">
+                        <label for="avatar-upload">Choose a new photo</label>
+                        <input type="file" id="avatar-upload" accept="image/*" required
+                            style="padding: 0.5rem; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; width: 100%;">
+                        <small style="display: block; margin-top: 0.5rem; color: #64748b;">For best results, upload a
+                            square image.</small>
+                    </div>
+                    <button type="submit" class="submit-btn">Upload and Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module">
+        import { supabase } from './supabase-client.js';
+
+        let currentUser = null;
+
+        // Check if user is logged in, otherwise redirect
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            if (!session) {
+                window.location.href = 'login.html';
+            } else {
+                currentUser = session.user;
+            }
+        });
+
+        const form = document.getElementById('change-photo-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const avatarFile = document.getElementById('avatar-upload').files[0];
+            const submitBtn = e.target.querySelector('.submit-btn');
+
+            if (!avatarFile || !currentUser) return;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
+
+            // 1. Upload file to Supabase Storage
+            const fileName = `${currentUser.id}/${Date.now()}_${avatarFile.name}`;
+            const { error: uploadError } = await supabase.storage.from('avatars').upload(fileName, avatarFile);
+
+            if (uploadError) {
+                alert("Error uploading picture: " + uploadError.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Upload and Save';
+                return;
+            }
+
+            // 2. Get the public URL
+            const { data: { publicUrl } } = supabase.storage.from('avatars').getPublicUrl(fileName);
+
+            // 3. Update the 'profiles' table with the new URL
+            const { error: updateError } = await supabase.from('profiles').update({ avatar_url: publicUrl }).eq('id', currentUser.id);
+
+            if (updateError) {
+                alert("Error saving profile: " + updateError.message);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Upload and Save';
+            } else {
+                alert("Profile picture updated successfully!");
+                window.location.href = 'dashboard.html#profile'; // Redirect back to profile
+            }
+        });
+    </script>
+</body>
+
+</html>

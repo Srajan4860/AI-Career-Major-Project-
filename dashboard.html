@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI Career Planner</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="roadmap-generator.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>AI Career Planner</span>
+            </div>
+            <div class="nav-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span> </button>
+                <div class="user-menu">
+                    <div class="user-avatar" id="nav-avatar-container">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Loading...</span>
+                        <span class="user-role">Explorer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <ul class="nav-menu">
+                    <li class="nav-item active"><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li class="nav-item"><a href="#career-assessment"><i class="fas fa-tasks"></i> Career Assessment</a>
+                    </li>
+                    <li class="nav-item"><a href="#roadmap"><i class="fas fa-road"></i> My Roadmap</a></li>
+                    <li class="nav-item"><a href="#courses"><i class="fas fa-book-open"></i> Courses</a></li>
+                    <li class="nav-item"><a href="#projects"><i class="fas fa-lightbulb"></i> Projects</a></li>
+                    <li class="nav-item"><a href="#mentorship"><i class="fas fa-users"></i> Mentorship</a></li>
+                    <li class="nav-item"><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a>
+                    </li>
+                    <li class="nav-item"><a href="#profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+                </ul>
+
+                <div class="sidebar-footer">
+                    <div class="upgrade-card">
+                        <i class="fas fa-crown"></i>
+                        <h4>Upgrade to Pro</h4>
+                        <p>Unlock advanced features and personalized mentorship.</p>
+                        <button class="upgrade-btn">Upgrade Now</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="content-section" id="dashboard" style="display: none;">
+                <div class="section-header">
+                    <h1 id="welcome-message">Welcome!</h1>
+                    <p>Here's a summary of your progress and career plan.</p>
+                </div>
+
+                <div id="roadmap-generator" class="roadmap-generator-container">
+                    <div class="section-header">
+                        <h2>Create or Update Your Career Roadmap</h2>
+                        <p>This information will help us create a personalized plan.</p>
+                    </div>
+                    <form id="roadmap-info-form">
+                        <div class="form-group full-width"
+                            style="text-align: center; border: 2px dashed #cbd5e1; padding: 2rem; border-radius: 12px; background: #f8fafc;">
+                            <label for="resume-upload"
+                                style="font-size: 1.2rem; font-weight: 700; color: #4f46e5; cursor: pointer;">
+                                <i class="fas fa-file-upload"></i> Upload Your Resume
+                            </label>
+                            <p style="color: #64748b; margin-top: 0.5rem;">Automatically generate roadmap from a resume
+                            </p>
+                            <input type="file" id="resume-upload" accept=".pdf,.doc,.docx" style="display: none;">
+                            <div id="resume-file-name" style="margin-top: 1rem; font-weight: 500;"></div>
+                        </div>
+                        <div class="divider" style="margin: 2rem 0;"><span>OR FILL MANUALLY</span></div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" id="full-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="career-field">Field of Interest</label>
+                                <input type="text" id="career-field"
+                                    placeholder="e.g., AI/Machine Learning, Data Science" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience-level">Experience Level</label>
+                                <select id="experience-level" required>
+                                    <option value="beginner">Beginner (0-1 years)</option>
+                                    <option value="intermediate">Intermediate (2-4 years)</option>
+                                    <option value="advanced">Advanced (5+ years)</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="current-skills">Current Skills (comma-separated)</label>
+                                <textarea id="current-skills" rows="4"
+                                    placeholder="e.g., Python, SQL, Data Analysis"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="career-goals">Career Goals</label>
+                                <textarea id="career-goals" rows="4"
+                                    placeholder="e.g., Become a Senior Data Scientist at a tech company."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn generate-btn">Save & Update Roadmap</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="content-section" id="career-assessment" style="display: none;">
+                <div class="section-header">
+                    <h1>Career Assessment Tools</h1>
+                    <p>Understand your skills, interests, and potential paths.</p>
+                </div>
+                <div class="assessment-accordion">
+                    <details class="assessment-tool">
+                        <summary><i class="fas fa-tasks"></i> Skill Gap Analysis</summary>
+                        <div class="assessment-content">
+                            <p>See which skills you have and which you need for your target role.</p>
+                            <div class="assessment-input-container">
+                                <label for="target-role-input">Enter Your Target Job Title:</label>
+                                <div class="input-group">
+                                    <input type="text" id="target-role-input" placeholder="e.g., Data Scientist">
+                                    <button id="analyze-skills-btn" class="submit-btn">Analyze</button>
+                                </div>
+                                <small>Try roles like: Data Scientist, Software Engineer, Product Manager...</small>
+                            </div>
+                            <div id="skill-gap-results" style="display: none; margin-top: 1.5rem;"></div>
+                        </div>
+                    </details>
+                    <details class="assessment-tool">
+                        <summary><i class="fas fa-clipboard-list"></i> Skills Inventory</summary>
+                        <div class="assessment-content">
+                            <p>Rate your proficiency in skills relevant to your field.</p>
+                            <div id="skills-inventory-list">
+                                <p class="placeholder">Select your primary career field in your profile to see relevant
+                                    skills.</p>
+                            </div>
+                            <button id="save-skills-inventory-btn" class="submit-btn"
+                                style="margin-top: 1rem; display: none;">Save Ratings</button>
+                        </div>
+                    </details>
+                    <details class="assessment-tool">
+                        <summary><i class="fas fa-route"></i> Career Path Explorer</summary>
+                        <div class="assessment-content">
+                            <p>Explore typical career progressions and related roles based on your current field.</p>
+                            <div id="career-path-info">
+                                <p class="placeholder">Select your primary career field in your profile to explore
+                                    paths.</p>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="assessment-tool">
+                        <summary><i class="fas fa-user-check"></i> Work Style Quiz</summary>
+                        <div class="assessment-content">
+                            <p>Answer a few questions to understand your work style preferences.</p>
+                            <form id="work-style-quiz-form">
+                                <p class="placeholder">Loading quiz...</p>
+                            </form>
+                            <button id="submit-quiz-btn" class="submit-btn" style="margin-top: 1rem;">See My
+                                Style</button>
+                            <div id="quiz-results" style="display: none; margin-top: 1.5rem;"></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-section" id="roadmap" style="display: none;">
+                <div class="loader"></div>
+            </div>
+
+            <div class="content-section" id="courses" style="display: none;">
+                <div class="section-header">
+                    <h1>Recommended Courses & Tutorials</h1>
+                    <p>Resources based on your skills and career goals.</p>
+                </div>
+                <div id="courses-container">
+                    <div class="loader"></div>
+                </div>
+            </div>
+           
+            <div class="content-section" id="projects" style="display: none;">
+                <div class="projects-content">
+
+                    <div class="projects-header">
+                        <h1>My Projects</h1>
+                        <button id="add-project-btn">+ Add New Project</button>
+                    </div>
+
+                    <div id="project-list-container">
+                    </div>
+
+                    <div id="no-projects-message" style="display: none; text-align: center; padding: 40px;">
+                        <h3>You haven't added any projects yet.</h3>
+                        <p>Click the "Add New Project" button to get started!</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="content-section" id="mentorship" style="display: none;">
+                <div class="section-header">
+                    <h1>Find Your Mentor</h1>
+                    <p>Connect with industry experts to guide your career journey.</p>
+                </div>
+                <div class="mentors-grid-container" id="mentors-grid">
+                    <div class="loader"></div>
+                </div>
+            </div>
+
+            <div class="content-section" id="certificates" style="display: none;">
+                <div class="coming-soon">
+                    <i class="fas fa-tools"></i>
+                    <h3>Coming Soon</h3>
+                    <p>Our Certificates section is under construction.</p>
+                </div>
+            </div>
+
+            <div class="content-section" id="profile" style="display: none;">
+                <div class="section-header">
+                    <h1>Manage Your Profile</h1>
+                    <p>Update your account details and preferences.</p>
+                </div>
+                <div class="profile-settings-grid">
+                    <div class="setting-card">
+                        <i class="fas fa-camera"></i>
+                        <h3>Update Profile Picture</h3>
+                        <p>Change your avatar. This will be visible to mentors and on your profile.</p>
+                        <a href="change-photo.html" class="submit-btn">Change Photo</a>
+                    </div>
+                    <div class="setting-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Update Email Address</h3>
+                        <p>Update the email address associated with your account.</p>
+                        <a href="change-email.html" class="submit-btn">Change Email</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="supabase-client.js"></script>
+    <script type="module" src="dashboard.js"></script>
+    <script src="supabase-client.js"></script>
+    <script src="projects.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>

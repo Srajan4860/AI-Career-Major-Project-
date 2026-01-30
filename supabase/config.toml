@@ -1,0 +1,44 @@
+
+[functions.sovren-parser]
+enabled = true
+verify_jwt = true
+import_map = "./functions/sovren-parser/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/sovren-parser/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/sovren-parser/*.html" ]
+
+[functions.youtube-search]
+enabled = true
+verify_jwt = true
+import_map = "./functions/youtube-search/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/youtube-search/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/youtube-search/*.html" ]
+
+[functions.coursera-search]
+enabled = true
+verify_jwt = true
+import_map = "./functions/coursera-search/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/coursera-search/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/coursera-search/*.html" ]
+
+[functions.generate-project-ideas]
+enabled = true
+verify_jwt = true
+import_map = "./functions/generate-project-ideas/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/generate-project-ideas/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/generate-project-ideas/*.html" ]

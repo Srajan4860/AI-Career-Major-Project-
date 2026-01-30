@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Career Planner</title>
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body> 
+    <div class="auth-container">
+        <div class="auth-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+            </div>
+        </div>
+
+        <div class="auth-content">
+            <div class="auth-left">
+                <div class="brand">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Career Planner</span>
+                </div>
+                <h1>Transform Your Career Journey</h1>
+                <p>Join thousands of professionals who have accelerated their careers with our AI-powered platform.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Personalized AI Career Assessment</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Custom Learning Roadmaps</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Industry Expert Mentorship</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Professional Certification</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"AI Career Planner helped me transition from finance to data science in just 8 months!"</p>
+                        <div class="testimonial-author">
+                            <div class="avatar"></div>
+                            <div class="author-info">
+                                <span class="name">Sarah Chen</span>
+                                <span class="role">Data Scientist at Google</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-right">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="login">Login</button>
+                            <button class="tab-btn" data-tab="register">Register</button>
+                        </div>
+                    </div>
+
+                    <form id="login-form" class="auth-form active">
+                        <div class="welcome-text">
+                            <h2>Welcome Back!</h2>
+                            <p>Please sign in to your account</p>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="social-btn google-btn">
+                                <i class="fab fa-google"></i>
+                                <span>Continue with Google</span>
+                            </button>
+                            <button type="button" class="social-btn linkedin-btn" disabled>
+                                <i class="fab fa-linkedin"></i>
+                                <span>Continue with LinkedIn</span>
+                            </button>
+                        </div>
+
+                        <div class="divider">
+                            <span>or sign in with email</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" id="login-email" name="email" required>
+                            <i class="fas fa-envelope input-icon"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" required>
+                            <i class="fas fa-lock input-icon"></i>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox">
+                                <input type="checkbox" name="remember">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Sign In
+                        </button>
+                    </form>
+
+                    <form id="register-form" class="auth-form">
+                        <div class="welcome-text">
+                            <h2>Create Account</h2>
+                            <p>Start your career transformation today</p>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="social-btn google-btn">
+                                <i class="fab fa-google"></i>
+                                <span>Continue with Google</span>
+                            </button>
+                            <button type="button" class="social-btn linkedin-btn" disabled>
+                                <i class="fab fa-linkedin"></i>
+                                <span>Continue with LinkedIn</span>
+                            </button>
+                        </div>
+
+                        <div class="divider">
+                            <span>or create account with email</span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                                <i class="fas fa-user input-icon"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                                <i class="fas fa-user input-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-email">Email Address</label>
+                            <input type="email" id="register-email" name="email" required>
+                            <i class="fas fa-envelope input-icon"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" name="password" required>
+                            <i class="fas fa-lock input-icon"></i>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" name="confirmPassword" required>
+                            <i class="fas fa-lock input-icon"></i>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="career-interest">Career Interest</label>
+                            <select id="career-interest" name="careerInterest" required>
+                                <option value="">Select your career interest</option>
+                                <option value="ai-ml">AI/Machine Learning</option>
+                                <option value="data-science">Data Science</option>
+                                <option value="software-eng">Software Engineering</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="healthcare-admin">Healthcare Administration</option>
+                                <option value="medical-research">Medical Research</option>
+                                <option value="biotechnology">Biotechnology</option>
+                                <option value="clinical-research">Clinical Research</option>
+                                <option value="financial-analyst">Financial Analysis</option>
+                                <option value="investment-banking">Investment Banking</option>
+                                <option value="chartered-accountant">Chartered Accountancy</option>
+                                <option value="risk-management">Risk Management</option>
+                                <option value="hotel-management">Hotel Management</option>
+                                <option value="business-analytics">Business Analytics</option>
+                                <option value="product-management">Product Management</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                            </select>
+                            <i class="fas fa-briefcase input-icon"></i>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-user-plus"></i>
+                            Create Account
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script type="module" src="supabase-client.js"></script>
+
+    <script type="module" src="auth.js"></script>
+
+</body>
+</html>

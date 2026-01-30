@@ -1,0 +1,1331 @@
+/* Dashboard Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 70px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.notification-btn {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.notification-btn:hover {
+    background: #f1f5f9;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.125rem 0.375rem;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.user-menu:hover {
+    background: #f1f5f9;
+}
+
+.user-avatar img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.user-role {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid #e2e8f0;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.nav-item {
+    margin-bottom: 0.5rem;
+}
+
+.nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-item:hover a,
+.nav-item.active a {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    margin: 0 1rem;
+    border-radius: 8px;
+}
+
+.nav-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    margin-top: auto;
+    padding: 1rem;
+}
+
+.upgrade-card {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.upgrade-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.upgrade-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.upgrade-card p {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.upgrade-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.upgrade-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    padding: 2rem;
+    max-width: calc(100vw - 280px);
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+#roadmap-generator {
+    display: none;
+    /* Initially hidden */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.stat-content h3 {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.stat-change {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.stat-change.positive {
+    color: #10b981;
+}
+
+.stat-change.negative {
+    color: #ef4444;
+}
+
+/* Progress Ring */
+.progress-ring {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.progress-svg {
+    width: 80px;
+    height: 80px;
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: #f1f5f9;
+    stroke-width: 8;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: url(#gradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+/* Quick Actions */
+.quick-actions {
+    margin-bottom: 3rem;
+}
+
+.quick-actions h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.action-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-2px);
+    border-color: #6366f1;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.1);
+}
+
+.action-card i {
+    font-size: 2rem;
+    color: #6366f1;
+    margin-bottom: 1rem;
+}
+
+.action-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.action-card p {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* Recent Activity */
+.recent-activity h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+}
+
+.activity-list {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    color: white;
+}
+
+.activity-icon.completed {
+    background: #10b981;
+}
+
+.activity-icon.progress {
+    background: #3b82f6;
+}
+
+.activity-icon.certificate {
+    background: #f59e0b;
+}
+
+.activity-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.activity-content p {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* Assessment Cards */
+.assessment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.assessment-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.assessment-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-header {
+    padding: 2rem 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.assessment-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.assessment-badge {
+    padding: 0.375rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.assessment-badge:not(.completed) {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.assessment-badge.completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.assessment-card p {
+    padding: 0 2rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.assessment-stats {
+    display: flex;
+    gap: 2rem;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+
+.assessment-stats .stat {
+    text-align: center;
+}
+
+.assessment-stats .number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6366f1;
+}
+
+.assessment-stats .label {
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.assessment-result {
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+
+.result-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.result-match {
+    font-size: 0.875rem;
+    color: #10b981;
+    font-weight: 500;
+}
+
+.assessment-card button {
+    width: calc(100% - 4rem);
+    margin: 0 2rem 2rem;
+    padding: 0.875rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+/* Roadmap */
+.roadmap-container {
+    max-width: 800px;
+}
+
+.roadmap-timeline {
+    position: relative;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.roadmap-phase {
+    position: relative;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.roadmap-phase.completed {
+    border-color: #10b981;
+}
+
+.roadmap-phase.current {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.phase-header {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.phase-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.roadmap-phase.completed .phase-icon {
+    background: #10b981;
+}
+
+.roadmap-phase.current .phase-icon {
+    background: #6366f1;
+}
+
+.roadmap-phase.pending .phase-icon {
+    background: #94a3b8;
+}
+
+.phase-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.phase-duration {
+    margin-left: auto;
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.phase-content {
+    padding: 0 2rem 2rem;
+    margin-left: 76px;
+}
+
+.milestone {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.milestone:last-child {
+    border-bottom: none;
+}
+
+.milestone i {
+    width: 20px;
+    text-align: center;
+}
+
+.milestone.completed i {
+    color: #10b981;
+}
+
+.milestone.current i {
+    color: #6366f1;
+}
+
+.milestone.pending i {
+    color: #94a3b8;
+}
+
+.milestone span {
+    font-weight: 500;
+    color: #374151;
+}
+
+.progress-bar {
+    width: 100px;
+    height: 4px;
+    background: #f1f5f9;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-left: auto;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    transition: width 0.5s ease;
+}
+
+/* Coming Soon */
+.coming-soon {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+}
+
+.coming-soon i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #94a3b8;
+}
+
+.coming-soon h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .main-content {
+        margin-left: 0;
+        max-width: 100vw;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .assessment-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .user-info {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-stats {
+        justify-content: center;
+    }
+
+    .phase-content {
+        margin-left: 0;
+        padding-left: 1rem;
+    }
+}
+
+/* --- Courses Page Styles --- */
+.courses-section { margin-bottom: 3rem; }
+.courses-section h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+.course-card { background: white; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: all 0.3s ease; }
+.course-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); }
+.course-thumbnail img { width: 100%; height: 200px; object-fit: cover; }
+.course-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.course-content h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4; /* Limit title lines */ display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; min-height: 3.1em; /* Adjust based on line-height */ }
+.course-provider { color: #64748b; font-size: 0.875rem; margin-bottom: 1rem; }
+.course-card a { background: #f1f5f9; color: #475569; text-decoration: none; padding: 0.75rem; border-radius: 8px; font-weight: 600; text-align: center; margin-top: auto; transition: background-color 0.2s; display: block; } /* Ensure link takes full width */
+.course-card a:hover { background: #e2e8f0; }
+/* Loader styles */
+.loader { border: 5px solid #f3f3f3; border-top: 5px solid #6366f1; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 4rem auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* --- Locked Mentor Styles --- */
+.mentor-card.locked {
+    position: relative; /* Needed for absolute positioning of overlay */
+    opacity: 0.7; /* Slightly dim the card */
+    pointer-events: none; /* Prevent clicking connect button */
+}
+
+.mentor-card.locked::after {
+    content: '\f023'; /* FontAwesome lock icon unicode */
+    font-family: 'Font Awesome 6 Free'; /* Ensure FontAwesome is loaded */
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem; /* Large lock icon */
+    color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    z-index: 10;
+    pointer-events: none; /* Icon shouldn't block underlying elements if needed */
+}
+
+/* Optionally disable the connect button visually too */
+.mentor-card.locked .connect-btn {
+    background: #94a3b8; /* Grey out the button */
+    cursor: not-allowed;
+}
+/* --- New Mentor Card Styles (using Course Card base) --- */
+
+/* Use the same grid container style */
+.mentors-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Match course grid */
+    gap: 1.5rem; /* Match course grid */
+}
+
+/* Style mentor cards like course cards */
+.mentor-card-new { /* Using a new class to avoid conflicts if needed, but styling like course-card */
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.mentor-card-new:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Style the avatar like the course thumbnail */
+.mentor-card-thumbnail img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Keeps filling the space */
+    object-position: top; /* Changed from center to top */
+}
+
+/* Use the same content padding */
+.mentor-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Style mentor name like course title */
+.mentor-card-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem; /* Adjust spacing */
+    line-height: 1.4;
+    /* Optional: Limit title lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 1.4em; /* Approx 1 line */
+}
+
+/* Style mentor title like course provider */
+.mentor-card-provider {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* Style expertise tags */
+.mentor-card-expertise {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem; /* Space before button */
+}
+
+.mentor-card-expertise .tag {
+    background: #eef2ff;
+    color: #4338ca;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+/* Style the button like the course link */
+.mentor-card-new a, .mentor-card-new button { /* Style button like the link */
+    background: #f1f5f9;
+    color: #475569;
+    text-decoration: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: auto; /* Push button to bottom */
+    transition: background-color 0.2s;
+    display: block; /* Make it block level */
+    border: none; /* Remove default button border */
+    cursor: pointer;
+}
+
+.mentor-card-new a:hover, .mentor-card-new button:hover {
+    background: #e2e8f0;
+}
+
+/* --- Locked State Overlay (Keep this) --- */
+.mentor-card-new.locked {
+    position: relative;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* --- Updated Locked State Overlay --- */
+.mentor-card-new.locked {
+    position: relative;
+    opacity: 0.7; /* Keep it dimmed */
+     /* Clicks are now allowed, JS handles the popup */
+}
+
+/* Position a smaller lock icon in the corner */
+.mentor-card-new.locked::after {
+    content: '\f023'; /* Lock icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 1rem; /* Adjust spacing from top */
+    right: 1rem; /* Adjust spacing from right */
+    font-size: 1.5rem; /* Make the icon smaller */
+    color: white; /* White icon */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 0.5rem; /* Padding around the icon */
+    border-radius: 50%; /* Make the background circular */
+    z-index: 10;
+    pointer-events: none; /* Icon shouldn't capture clicks */
+}
+
+/* Keep the disabled button style */
+.mentor-card-new.locked button {
+    background: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+.mentor-card-new.locked button:hover {
+    background: #cbd5e1;
+}
+
+.mentor-card-new.locked button {
+    background: #cbd5e1; /* Different grey for locked state */
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.mentor-card-new.locked button:hover {
+    background: #cbd5e1; /* Prevent hover effect */
+}
+
+/* --- Career Assessment Accordion Styles --- */
+.assessment-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.assessment-tool {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden; /* Prevent content overflow on close */
+}
+
+.assessment-tool summary {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    list-style: none; /* Remove default marker */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background-color 0.2s;
+}
+
+.assessment-tool summary::-webkit-details-marker { display: none; } /* Hide marker */
+
+.assessment-tool summary:hover {
+    background-color: #f8fafc;
+}
+
+.assessment-tool summary i {
+    color: #6366f1;
+    width: 20px; /* Align icons */
+    text-align: center;
+}
+
+/* Add arrow indicator */
+.assessment-tool summary::after {
+    content: '\f078'; /* Chevron down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-left: auto;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.assessment-tool[open] summary {
+    background-color: #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.assessment-tool[open] summary::after {
+    transform: rotate(180deg); /* Flip arrow */
+}
+
+.assessment-content {
+    padding: 1.5rem;
+    border-top: 1px solid #e2e8f0; /* Ensure separator even if summary border removed */
+    color: #374151;
+    line-height: 1.6;
+}
+.assessment-content .placeholder { color: #94a3b8; font-style: italic;}
+
+/* --- Input Group Styling --- */
+.assessment-input-container label { font-weight: 600; color: #374151; margin-bottom: 0.5rem; display: block; }
+.assessment-input-container .input-group { display: flex; gap: 1rem; }
+.assessment-input-container input[type="text"] { flex-grow: 1; padding: 0.875rem 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; }
+.assessment-input-container input[type="text"]:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+.assessment-input-container small { display: block; margin-top: 0.5rem; color: #64748b; font-size: 0.875rem;}
+.assessment-input-container .submit-btn { padding: 0.875rem 1.5rem; font-size: 1rem; white-space: nowrap;} /* Ensure button fits */
+
+
+/* --- Skills Inventory Styling --- */
+#skills-inventory-list .skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+ #skills-inventory-list .skill-item:last-child { border-bottom: none;}
+#skills-inventory-list label { font-weight: 500;}
+#skills-inventory-list select { padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; }
+
+/* --- Career Path Styling --- */
+#career-path-info h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #4f46e5; }
+#career-path-info ul { list-style: disc; margin-left: 1.5rem; }
+
+/* --- Quiz Styling --- */
+#work-style-quiz-form .quiz-question { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px dashed #e2e8f0;}
+#work-style-quiz-form label { display: block; margin-bottom: 0.75rem; font-weight: 600;}
+#work-style-quiz-form .options label { display: block; margin-bottom: 0.5rem; font-weight: normal; cursor: pointer; }
+#work-style-quiz-form input[type="radio"] { margin-right: 0.5rem; }
+#quiz-results h3 { font-size: 1.2rem; font-weight: 700; color: #1e293b; margin-bottom: 1rem; }
+#quiz-results p { font-size: 1rem; line-height: 1.7; }
+
+/* Keep Skill Gap results styling from previous step */
+/* ... (Ensure styles for #skill-gap-results, .skills-list-container etc. are present) ... */
+/* --- Profile Settings Page Styles --- */
+.profile-settings-grid {
+    display: grid;
+    /* Create 1 or 2 columns based on available space */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.setting-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+}
+
+.setting-card i {
+    font-size: 2rem;
+    color: #6366f1; /* Your theme's primary color */
+    margin-bottom: 1rem;
+    width: 40px; /* Gives the icon a defined space */
+}
+
+.setting-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+}
+
+.setting-card p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* This pushes the button to the bottom */
+}
+
+.setting-card .submit-btn {
+    text-decoration: none; /* Makes the <a> tag look like a button */
+    display: inline-block;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+}
+
+/* --- Project Page Styling --- */
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.projects-header h1 {
+    margin: 0;
+}
+
+.projects-header button {
+    background-color: #6a5acd; /* Or your app's primary color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#project-list-container {
+    display: grid;
+    /* This creates a responsive 3-column grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card .project-links {
+    margin-top: 15px;
+}
+
+.project-card .project-links a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    color: #6a5acd; /* Your primary color */
+}
+
+/* --- Project Modal Styling --- */
+
+#project-modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Sits on top of the page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    
+    /* These two lines center the modal */
+    justify-content: center;
+    align-items: center;
+}
+
+/* This class will be added by JavaScript to show the modal */
+#project-modal-overlay.show {
+    display: flex;
+}
+
+#project-modal {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+#project-modal h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important! */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#cancel-btn {
+    background: #f0f0f0;
+    margin-right: 10px;
+}
+
+#save-btn {
+    background: #6a5acd; /* Your primary color */
+    color: white;
+}
+
+/* --- AI Ideas Section Styling --- */
+
+.ai-ideas-section {
+    background: #f4f3f8; /* A slightly different background */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+#generate-ai-ideas-btn {
+    background-color: #5a4acb; /* A nice AI-purple */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#generate-ai-ideas-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* We can reuse the project list grid style */
+.project-list-style {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding-top: 20px; /* Add padding only when it has content */
+}
